@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/js.js')}}" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+    No Ninjas Here<Br>
+    <a href="/ninja">ninjas</a>
+    <div id="test">
+            <p id="turtlename"></p>
+
+            <img src='' id='turtlepic'>
+
+    </div>
+    <input type="button" name="red" value="red">
+    <input type="button" name="blue" value="blue">
+    <input type="button" name="orange" value="orange">
+    <input type="button" name="purple" value="purple">
+    <input type="button" name="" value="april">
+    </div>
+    <script>
+  
+        $('document').ready(function () {
+            //   console.log("hello")
+                $('img').hide();
+        $('input[type="button"]').click(function(){
+            color = $(this).val();
+            // console.log(color, $(this).attr('value'), "the value");
+            $.get("/get_current_user/"+ color, function (turtle) { 
+                    $('#turtlename').html(turtle.name);
+                    $('#turtlepic').attr('src', 'static/images/' + turtle.name + '.jpg');
+                    $('img').show();
+                    // console.log(color, "the color");
+            });
+        //                 
+
+        // console.log("It made it to the end")
+    });
+        });
+    
+    </script>
+</body>
+
+</html>

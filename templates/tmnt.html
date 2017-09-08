@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        
+         {% if color == 'red'%}
+        <img src="{{url_for('static', filename='images/raphael.jpg')}}" id="tmnt">
+         {% elif color == 'purple'%}
+        <img src="{{url_for('static', filename='images/donatello.jpg')}}" id="tmnt">
+         {% elif color == 'blue'%}
+        <img src="{{url_for('static', filename='images/leonardo.jpg')}}" id="tmnt">
+         {% elif color == 'orange'%}
+        <img src="{{url_for('static', filename='images/michelangelo.jpg')}}" id="tmnt">
+         {% elif color == 'home'%}
+        <img src="{{url_for('static', filename='images/tmnt.png')}}" id="tmnt">
+        {% else %}
+        <img src="{{url_for('static', filename='images/notapril.jpg')}}" id="tmnt">
+        {% endif %}
+
+        <p><a href="/ninja/red">raphael</a></p>
+        <p><a href="/ninja/purple">donatello</a></p>
+        <p><a href="/ninja/blue">leonardo</a></p>
+        <p><a href="/ninja/orange">michelangelo</a></p>
+        <p><a href="/ninja/">home</a></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+body {
+    width:100%;
+    margin: auto;
+}
+
+#wrapper{
+    border: 2px solid green;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#tmnt {
+    width: 15em;
+    height: 15em;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
